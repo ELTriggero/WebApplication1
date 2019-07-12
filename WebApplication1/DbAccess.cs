@@ -16,7 +16,9 @@ namespace WebApplication1
         private static SqlDataAdapter adapter = new SqlDataAdapter();
         public SqlTransaction DbTran;
 
-        private static string strConnString = "";
+        //puoi trovare il DataSource del server Sql nella sezione proprietà a destra di SSMS
+        //@ toglie errori di format
+        private static string strConnString = @"Data Source=(LocalDb)\MSSQLLocalDB;Initial Catalog=SocialNetwork;Integrated Security=True";
 
         public int executeDataAdapter(DataTable tblName, string strSelectSql)
         {

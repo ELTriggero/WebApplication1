@@ -21,7 +21,7 @@ namespace WebApplication1
     {
         DataTable dtCountries = new DataTable();
         DbAccess objDbAccess = new DbAccess();
-        DataTable dtusers = new DataTable();
+        DataTable dtUsers = new DataTable();
         [WebMethod]
         public string HelloWorld()
         {
@@ -54,9 +54,9 @@ namespace WebApplication1
         public string dataTablesForusers(string id)
         {
             string query = "Select * From Users Where ID = '" + id + "'";
-            objDbAccess.readDatathroughAdapter(query, dtusers);
+            objDbAccess.readDatathroughAdapter(query, dtUsers);
 
-            string result = JsonConvert.SerializeObject(dtusers);
+            string result = JsonConvert.SerializeObject(dtUsers);
             return result;
         }
     }
